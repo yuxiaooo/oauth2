@@ -15,12 +15,13 @@ import (
 
 	"github.com/go-oauth2/oauth2/v4/generates"
 
+	"github.com/go-session/session"
+
 	"github.com/go-oauth2/oauth2/v4/errors"
 	"github.com/go-oauth2/oauth2/v4/manage"
 	"github.com/go-oauth2/oauth2/v4/models"
 	"github.com/go-oauth2/oauth2/v4/server"
 	"github.com/go-oauth2/oauth2/v4/store"
-	"github.com/go-session/session"
 )
 
 var (
@@ -29,6 +30,7 @@ var (
 	secretvar string
 	domainvar string
 	portvar   int
+	uri       string
 )
 
 func init() {
@@ -36,6 +38,7 @@ func init() {
 	flag.StringVar(&idvar, "i", "222222", "The client id being passed in")
 	flag.StringVar(&secretvar, "s", "22222222", "The client secret being passed in")
 	flag.StringVar(&domainvar, "r", "http://localhost:9094", "The domain of the redirect url")
+	flag.StringVar(&uri, "u", "", "The uri for mysql where the token store")
 	flag.IntVar(&portvar, "p", 9096, "the base port for the server")
 }
 
