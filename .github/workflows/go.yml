@@ -38,7 +38,7 @@ jobs:
       run: go test -json -v ./...
 
   ci:
-	  runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 	  steps:
 	  - uses: actions/checkout@v1
 	    with:
